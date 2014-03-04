@@ -79,7 +79,6 @@ def hello():
 @app.route("/entity/<entity>", methods=['POST','PUT'])
 def update(entity):
     req_json = request.get_json(True)
-    print req_json
     myWorld.set(entity, req_json)
     return jsonify(myWorld.get(entity))
 
